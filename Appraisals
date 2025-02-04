@@ -1,8 +1,8 @@
-appraise "recent_gems" do
+appraise "recent" do
   # This is the default setup
 end
 
-appraise "old_gems" do
+appraise "legacy" do
   gem "mutex_m" # Extra requirement for activesupport
 
   gem "rspec", "~> 3.8.0"

@@ -12,7 +12,9 @@ jobs:
     strategy:
       matrix:
         ruby-version: ["3.4.1", "3.3.7", "3.2.7"] # Non-EOL versions
-        appraisal: ["recent_gems", "old_gems"]
+        gemfile: ["recent", "legacy"]
+    env:
+      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
     steps:
       - uses: actions/checkout@v4
       - name: Setup ruby
@@ -20,10 +22,8 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
-      - name: Install appraisal gems
-        run: bundle exec appraisal install
       - name: Run tests
-        run: bundle exec appraisal ${{ matrix.appraisal }} rspec
+        run: bundle exec rspec
       - name: Send coverage info
         uses: coverallsapp/github-action@v2
-        if: ${{ matrix.ruby-version == '3.4.1' && matrix.appraisal == 'recent_gems' }}
+        if: ${{ matrix.ruby-version == '3.4.1' && matrix.gemfile == 'recent' }}
