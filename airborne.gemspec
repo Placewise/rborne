@@ -1,21 +1,23 @@
 require 'date'
 
 Gem::Specification.new do |s|
-  s.name        = 'airborne'
-  s.version     = '0.3.7'
-  s.date        = Date.today.to_s
+  s.name = 'airborne'
+  s.version = '0.3.7'
   s.summary = 'RSpec driven API testing framework'
-  s.authors     = ['Alex Friedman', 'Seth Pollack']
-  s.email       = ['a.friedman07@gmail.com', 'seth@sethpollack.net']
+  s.author = 'Placewise Development Team'
+  s.email = 'mpc.dev@placewise.com'
+  s.license = 'MIT'
+
+  s.bindir = 'exe' # Not used, but definitely not 'bin'
+  s.files = Dir['CHANGELOG.md', 'LICENSE', 'README.md', 'airborne.gemspec', 'lib/**/*']
   s.require_paths = ['lib']
-  s.files = `git ls-files`.split("\n")
-  s.license     = 'MIT'
-  s.add_runtime_dependency 'rspec', '~> 3.8'
-  s.add_runtime_dependency 'rest-client', '< 3.0', '>= 2.0.2'
-  s.add_runtime_dependency 'rack-test', '< 3', '>= 1.1.0'
-  s.add_runtime_dependency 'rack'
-  s.add_runtime_dependency 'activesupport'
-  s.add_development_dependency 'webmock', '~> 3'
-  s.add_development_dependency 'rake', '~> 12'
-  s.add_development_dependency 'github_changelog_generator', '~> 1.14'
+
+  s.required_ruby_version = ">= 3.0.0"
+
+  # @todo: Figure out
+  s.add_dependency 'rspec', '~> 3.8'
+  s.add_dependency 'rest-client', '< 3.0', '>= 2.0.2'
+  s.add_dependency 'rack-test', '< 3', '>= 1.1.0'
+  s.add_dependency 'rack'
+  s.add_dependency 'activesupport'
 end
