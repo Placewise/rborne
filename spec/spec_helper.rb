@@ -1,5 +1,12 @@
 require 'coveralls'
 Coveralls.wear!
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start
+
 require 'airborne'
 require 'stub_helper'
 
