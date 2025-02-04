@@ -150,7 +150,6 @@ DEPENDENCIES
   coveralls_reborn
   faraday-retry
   pry
-  rake
   sinatra
   webmock
 
