@@ -2,6 +2,8 @@ require 'json'
 require 'sinatra'
 
 class SampleApp < Sinatra::Application
+  set :host_authorization, { permitted_hosts: [] }
+
   before do
     content_type 'application/json'
   end
@@ -18,6 +20,7 @@ end
 describe 'rack app' do
   it 'should allow requests against a sinatra app' do
     get '/'
+    puts response.body
     expect_json_types(foo: :string)
   end
 
