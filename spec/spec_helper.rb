@@ -5,7 +5,9 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-SimpleCov.start
+SimpleCov.start do
+  coverage_dir "tmp/coverage"
+end
 
 require 'airborne'
 require 'stub_helper'
