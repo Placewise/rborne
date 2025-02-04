@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+# A convenience development file to debug the code
+require 'bundler/setup'
+
+require 'airborne'
+require 'pry'
+
+Pry.start
