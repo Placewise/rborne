@@ -1,0 +1,6 @@
+# See https://asdf-vm.com/
+#
+# This file exists just for development convenience.
+# Its content does not determine the specific ruby version required to run the code.
+
+ruby 3.4.1
